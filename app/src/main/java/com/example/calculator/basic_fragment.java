@@ -148,10 +148,19 @@ public class basic_fragment extends Fragment implements View.OnClickListener {
 
     public void onBackspaceClick(View view)
     {
-        if (InterfaceActivity.getStr().length() > 0)
+        if (checkIsNum(InterfaceActivity.getStr())){
+            if (InterfaceActivity.getStr().length() > 0) {
+                InterfaceActivity.setStr(InterfaceActivity.getStr().substring(0, InterfaceActivity.getStr().length() - 1));
+                InterfaceActivity.getRes().setText(InterfaceActivity.getStr());
+            }
+        }
+        else
         {
-            InterfaceActivity.setStr(InterfaceActivity.getStr().substring(0, InterfaceActivity.getStr().length()-1));
-            InterfaceActivity.getRes().setText(InterfaceActivity.getStr());
+            while((!checkIsNum(InterfaceActivity.getStr())) && (InterfaceActivity.getStr().length() > 1))
+            {
+                InterfaceActivity.setStr(InterfaceActivity.getStr().substring(0, InterfaceActivity.getStr().length() - 1));
+                InterfaceActivity.getRes().setText(InterfaceActivity.getStr());
+            }
         }
     }
 
