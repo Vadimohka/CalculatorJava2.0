@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
 
 public class scientific_fragment  extends Fragment implements View.OnClickListener{
